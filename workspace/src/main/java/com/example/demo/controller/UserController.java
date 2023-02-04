@@ -12,7 +12,7 @@ import com.example.demo.entity.User;
 import com.example.demo.service.UserService;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -21,6 +21,6 @@ public class UserController {
     public String index(Model model) {
         List<User> users = userService.getUsers();
         model.addAttribute("users", users);
-        return "user/index";
+        return "users/index";
     }
 }
