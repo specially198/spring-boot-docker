@@ -13,7 +13,23 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    public User getUser(int id) {
+        return userRepository.findById(id).orElseThrow();
+    }
+
     public List<User> getUsers() {
         return userRepository.findAll();
+    }
+
+    public void create(User user) {
+        userRepository.save(user);
+    }
+
+    public void update(User user) {
+        userRepository.save(user);
+    }
+
+    public void delete(int id) {
+        userRepository.deleteById(id);
     }
 }

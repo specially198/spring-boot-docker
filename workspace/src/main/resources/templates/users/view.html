@@ -1,0 +1,14 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+</head>
+<body>
+    <div th:object="${user}">
+        <div th:text="|ID：*{id}|"></div>
+        <div th:text="|メールアドレス：*{email}|"></div>
+        <div th:text="|パスワード：*{password}|"></div>
+        <div th:text="|名前：*{name}|"></div>
+    </div>
+</body>
+</html>

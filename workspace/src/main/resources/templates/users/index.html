@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
 </head>
 <body>
+    <a th:href="@{/users/add}">新規登録</a>
     <table>
         <thead>
             <tr>
                 <th>ID</th>
                 <th>メールアドレス</th>
                 <th>名前</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -17,6 +19,13 @@
                 <td th:text="*{id}"></td>
                 <td th:text="*{email}"></td>
                 <td th:text="*{name}"></td>
+                <td>
+                    <a th:href="@{/users/view/{id}(id=*{id})}"><button>詳細</button></a>
+                    <a th:href="@{/users/edit/{id}(id=*{id})}"><button>編集</button></a>
+                    <form th:action="@{/users/delete/{id}(id=*{id})}" method="post">
+                        <button>削除</button>
+                    </form>
+                </td>
             </tr>
         </tbody>
     </table>
